@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}問題描述}{2}{section.1}%
+\contentsline {section}{\numberline {2}座標與建模假設}{3}{section.2}%
+\contentsline {section}{\numberline {3}力學：極板 \(b\) 之自由體圖}{3}{section.3}%
+\contentsline {section}{\numberline {4}靜電力 \(f_e\) 的方向}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}由電荷符號：力應恆為吸引}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}作業解答之 \(\operatorname {sgn}(\dot {x})\) 及其問題}{3}{subsection.4.2}%
+\contentsline {paragraph}{（i）靜止時不應無力。}{4}{section*.4}%
+\contentsline {paragraph}{（ii）靠近時應相吸，不應相斥。}{4}{section*.5}%
+\contentsline {paragraph}{（iii）靜電力是守恆力，不是耗散力。}{4}{section*.6}%
+\contentsline {section}{\numberline {5}電路方程}{4}{section.5}%
+\contentsline {section}{\numberline {6}完整非線性模型（對應 (a)）}{5}{section.6}%
+\contentsline {section}{\numberline {7}線性化（對應 (b)）}{5}{section.7}%
+\contentsline {section}{\numberline {8}系統輸出（對應 (c)）}{5}{section.8}%
+\contentsline {section}{\numberline {9}數值模擬}{6}{section.9}%
+\contentsline {subsection}{\numberline {9.1}脈衝響應}{6}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}正弦輸入}{6}{subsection.9.2}%
+\contentsline {section}{\numberline {10}與 \(\operatorname {sgn}(\dot {x})\) 模型之對照}{7}{section.10}%
+\contentsline {subsection}{\numberline {10.1}階躍輸入：靜止時橘色無力}{7}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}正弦輸入：\(F_{x,e}\) 不應被速度調制}{8}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}補充：不連續 \(\operatorname {sgn}\) 的數值顫振}{9}{subsection.10.3}%
+\contentsline {section}{\numberline {11}結論}{9}{section.11}%
