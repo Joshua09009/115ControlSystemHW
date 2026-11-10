@@ -1,0 +1,154 @@
+=====================================================================
+ HW06 Problem 5.13  --  Root Locus Baseline + Extensions
+ MATLAB 9.13.0.2126072 (R2022b) Update 3
+=====================================================================
+
+#####################  MODULE 1 : BASELINE  #####################
+
+[M1-a] Open-loop poles : 0.0000, 0.0000, -13.0000, -0.0000+/-10.0000j
+[M1-a] Open-loop zeros : -0.0000+/-9.0000j, -1.0000
+[M1-a] n - m = 2
+[M1-a] Asymptote centroid sigma_a = -6.000000
+[M1-a] Asymptote angles phi_i     = [90 270] deg
+[M1-a] Departure angle at +j10 (angle condition) = 136.7208 deg
+       sum(angle to zeros) = 264.2894 deg, sum(angle to other poles) = 307.5686 deg
+[M1-a] Departure angle at +j10 (numerical, K=1e-7) = 136.7209 deg
+[M1-a] Arrival angle at zero +j9 (angle condition) = -138.9647 deg
+
+[M1-b] Branch classification at K=0.1: dominant=[4 5], resonant=[2 3], from -13=1
+[M1-b] Dominant pair : zeta_max = 1.0000, first reached at K = 53.1305
+[M1-b] Dominant pair : zeta > 0.5 for K in [17.6236, 127.1590] (within sweep)
+[M1-b] Resonant pair : zeta_max = 0.1643 at K = 153.5863, pole = -1.5773 + 9.4694j
+[M1-b] ALL 5 roots   : max_K( min zeta ) = 0.1643 at K = 153.5863
+[M1-b] Extended sweep K in [1e-2, 1e5]: resonant zeta_max = 0.1643 at K = 153.561
+[M1-b] Resonant pole at K = 1e5: -0.0011 + 8.9990j  (-> zero at +j9)
+
+[M1-c] K for zeta_dom = 0.7071 : sweep-interp = 32.56733, fzero = 32.567333
+[M1-c] zeta_dom at textbook K = 35 : 0.73894
+
+---- Nominal, K = 35 (textbook) ----
+   Pole                           zeta  wn(rad/s)   Mode
+   -1.2158 + 1.1086j           0.73894    1.64537   dominant
+   -1.2158 - 1.1086j           0.73894    1.64537   dominant
+   -0.1885 + 10.1349j          0.01859   10.13668   resonant
+   -0.1885 - 10.1349j          0.01859   10.13668   resonant
+   -10.1914                    1.00000   10.19137   real
+   Stable: Yes | %OS = 28.167 | t_r = 0.5286 s | t_s(2%) = 5.4971 s | t_peak = 1.4369 s
+   Resonant-mode amplitude in y(t) (2|residue|) A_res = 5.22111e-02, freq = 10.1349 rad/s
+
+---- Nominal, K_opt = 32.5673 ----
+   Pole                           zeta  wn(rad/s)   Mode
+   -1.1101 + 1.1101j           0.70711    1.56995   dominant
+   -1.1101 - 1.1101j           0.70711    1.56995   dominant
+   -0.1725 + 10.1262j          0.01703   10.12762   resonant
+   -0.1725 - 10.1262j          0.01703   10.12762   resonant
+   -10.4347                    1.00000   10.43474   real
+   Stable: Yes | %OS = 28.832 | t_r = 0.5482 s | t_s(2%) = 5.5223 s | t_peak = 1.4476 s
+   Resonant-mode amplitude in y(t) (2|residue|) A_res = 4.77135e-02, freq = 10.1262 rad/s
+
+
+#####################  MODULE 2 : POLE-ZERO FLIP  #####################
+
+[M2] Case 1: Nominal collocated (wz^2=81) : wz = 9.0000 rad/s, wp = 10 rad/s
+     Departure angle at +j10 : analytic = 136.7208 deg, numerical = 136.7209 deg
+---- Case 1: Nominal collocated (wz^2=81), K=35 ----
+   Pole                           zeta  wn(rad/s)   Mode
+   -1.2158 + 1.1086j           0.73894    1.64537   dominant
+   -1.2158 - 1.1086j           0.73894    1.64537   dominant
+   -0.1885 + 10.1349j          0.01859   10.13668   resonant
+   -0.1885 - 10.1349j          0.01859   10.13668   resonant
+   -10.1914                    1.00000   10.19137   real
+   Stable: Yes | %OS = 28.167 | t_r = 0.5286 s | t_s(2%) = 5.4971 s | t_peak = 1.4369 s
+   Resonant-mode amplitude in y(t) (2|residue|) A_res = 5.22111e-02, freq = 10.1349 rad/s
+
+[M2] Case 2: Near-cancellation (wz^2=96) : wz = 9.7980 rad/s, wp = 10 rad/s
+     Departure angle at +j10 : analytic = 136.7208 deg, numerical = 136.7199 deg
+---- Case 2: Near-cancellation (wz^2=96), K=35 ----
+   Pole                           zeta  wn(rad/s)   Mode
+   -1.5185 + 1.0374j           0.82571    1.83904   dominant
+   -1.5185 - 1.0374j           0.82571    1.83904   dominant
+   -9.8807                     1.00000    9.88068   real
+   -0.0412 + 10.0272j          0.00410   10.02731   resonant
+   -0.0412 - 10.0272j          0.00410   10.02731   resonant
+   Stable: Yes | %OS = 22.138 | t_r = 0.4394 s | t_s(2%) = 2.8783 s | t_peak = 1.3423 s
+   Resonant-mode amplitude in y(t) (2|residue|) A_res = 1.13334e-02, freq = 10.0272 rad/s
+
+[M2] Case 3: Pole-zero flip (wz^2=105) : wz = 10.2470 rad/s, wp = 10 rad/s
+     Departure angle at +j10 : analytic = -43.2792 deg, numerical = -43.2778 deg
+---- Case 3: Pole-zero flip (wz^2=105), K=35 ----
+   Pole                           zeta  wn(rad/s)   Mode
+   -1.7167 + 0.9369j           0.87780    1.95575   dominant
+   -1.7167 - 0.9369j           0.87780    1.95575   dominant
+   -9.6715                     1.00000    9.67146   real
+   0.0525 + 9.9670j           -0.00527    9.96713   resonant
+   0.0525 - 9.9670j           -0.00527    9.96713   resonant
+   Stable: NO | %OS = N/A | t_r = N/A s | t_s(2%) = N/A s | t_peak = N/A s
+   Resonant-mode amplitude in y(t) (2|residue|) A_res = 1.43641e-02, freq = 9.9670 rad/s
+
+
+[M2] Residual envelope |y-1| in windows (max):
+     Case                                    [5,10]s     [25,30]s    [55,60]s
+     Case 1: Nominal collocated (wz^2=81)    2.0654e-02  4.6901e-04  1.6218e-06
+     Case 2: Near-cancellation (wz^2=96)     9.5381e-03  4.0073e-03  1.1773e-03
+     Case 3: Pole-zero flip (wz^2=105)       2.4233e-02  6.8704e-02  3.3072e-01
+
+#####################  MODULE 3 : NOTCH PRE-FILTER  #####################
+
+[M3] Closed-loop resonant pole (Design A) p_r = -0.1885 + 10.1349j
+[M3] Pre-filter F(s) = (s^2 + 2*0.01859*10.13668 s + 10.13668^2) / (s^2 + 2*0.70*10.13668 s + 10.13668^2)
+     F(0) = 1.0000 (unity DC gain), F(inf) = 1
+     Pre-filter is outside the loop -> closed-loop poles / stability unchanged.
+[M3] Design A (Baseline)              %OS= 28.170  t_s= 5.4974 s  A_res=5.2211e-02  max|y-1|[4,6]=3.1262e-02
+                                      u(0+)= 35.0000  max|u|= 35.0000  RMS[0,6]=  2.9796  RMS[3,6]=3.4661e-01  u_ss=0
+[M3] Design B (Lead + Notch F(s))     %OS= 23.829  t_s= 3.2519 s  A_res=9.8453e-17  max|y-1|[4,6]=7.5992e-03
+                                      u(0+)= 35.0000  max|u|= 35.0000  RMS[0,6]=  2.2324  RMS[3,6]=6.5021e-02  u_ss=0
+[M3] Design B on drifted plant (96)   %OS= 21.840  t_s= 3.0548 s  A_res=2.9475e-04  max|y-1|[4,6]=2.4398e-03
+                                      u(0+)= 35.0000  max|u|= 35.0000  RMS[0,6]=  2.1924  RMS[3,6]=3.5046e-02  u_ss=0
+
+#####################  MODULE 4 : SUMMARY TABLES (copy below)  #####################
+
+<!-- BEGIN SUMMARY -->
+**Table 1. Key root-locus quantities (nominal)**
+
+| Quantity | Value |
+|---|---|
+| sigma_a | -6.0000 |
+| phi_i (deg) | [90 270] |
+| phi_dep at +j10 (deg) | 136.7208 |
+| psi_arr at +j9 (deg) | -138.9647 |
+| Dominant zeta_max / first K | 1.0000 / 53.1305 |
+| Resonant zeta_max / K | 0.1643 / 153.5863 |
+| Resonant zeta_max, K in [1e-2,1e5] | 0.1643 |
+| max_K min(zeta over 5 roots) / K | 0.1643 / 153.5863 |
+| K_opt (zeta_dom = 0.7071) | 32.567333 |
+| zeta_dom at K = 35 | 0.73894 |
+
+**Table 2. Closed-loop poles and step metrics**
+
+| Experiment | K | CL poles | zeta_dom | wn_dom | zeta_res | wn_res | %OS | t_r (s) | t_s 2% (s) | A_res (10 rad/s mode) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Nominal, K = 35 (textbook) | 35.0000 | -1.2158+/-1.1086j, -0.1885+/-10.1349j, -10.1914 | 0.7389 | 1.6454 | 0.0186 | 10.1367 | 28.17 | 0.5286 | 5.4971 | 5.2211e-02 |
+| Nominal, K_opt = 32.5673 | 32.5673 | -1.1101+/-1.1101j, -0.1725+/-10.1262j, -10.4347 | 0.7071 | 1.5699 | 0.0170 | 10.1276 | 28.83 | 0.5482 | 5.5223 | 4.7714e-02 |
+| Case 1: Nominal collocated (wz^2=81), K=35 | 35.0000 | -1.2158+/-1.1086j, -0.1885+/-10.1349j, -10.1914 | 0.7389 | 1.6454 | 0.0186 | 10.1367 | 28.17 | 0.5286 | 5.4971 | 5.2211e-02 |
+| Case 2: Near-cancellation (wz^2=96), K=35 | 35.0000 | -1.5185+/-1.0374j, -9.8807, -0.0412+/-10.0272j | 0.8257 | 1.8390 | 0.0041 | 10.0273 | 22.14 | 0.4394 | 2.8783 | 1.1333e-02 |
+| Case 3: Pole-zero flip (wz^2=105), K=35 | 35.0000 | -1.7167+/-0.9369j, -9.6715, 0.0525+/-9.9670j | 0.8778 | 1.9557 | -0.0053 | 9.9671 | N/A | N/A | N/A | 1.4364e-02 |
+
+**Table 3. Pole-zero flip (K = 35)**
+
+| Case | wz | phi_dep (deg) | Re{s_res} | Im{s_res} | Stable? |
+|---|---|---|---|---|---|
+| Case 1: Nominal collocated (wz^2=81) | 9.0000 | 136.7208 | -0.18848 | 10.13493 | Yes |
+| Case 2: Near-cancellation (wz^2=96) | 9.7980 | 136.7208 | -0.04115 | 10.02722 | Yes |
+| Case 3: Pole-zero flip (wz^2=105) | 10.2470 | -43.2792 | +0.05248 | 9.96699 | NO |
+
+**Table 4. Control effort & residual vibration (0-6 s)**
+
+| Design | %OS | t_s 2% (s) | A_res (modal) | max|y-1| on [4,6]s | u(0+) | max|u| | u RMS [0,6] | u RMS [3,6] |
+|---|---|---|---|---|---|---|---|---|
+| Design A (Baseline) | 28.17 | 5.4974 | 5.2211e-02 | 3.1262e-02 | 35.0000 | 35.0000 | 2.9796 | 3.4661e-01 |
+| Design B (Lead + Notch F(s)) | 23.83 | 3.2519 | 9.8453e-17 | 7.5992e-03 | 35.0000 | 35.0000 | 2.2324 | 6.5021e-02 |
+| Design B on drifted plant (96) | 21.84 | 3.0548 | 2.9475e-04 | 2.4398e-03 | 35.0000 | 35.0000 | 2.1924 | 3.5046e-02 |
+
+<!-- END SUMMARY -->
+
+Done. Figures saved: 1
