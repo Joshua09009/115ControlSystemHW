@@ -1,0 +1,36 @@
+# ===== LaTeX 編譯產生的暫存檔（保留 .tex 與 .pdf）=====
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ===== MATLAB =====
+*.asv
+*.m~
+slprj/
+
+# ===== 作業系統與編輯器 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+.vscode/
